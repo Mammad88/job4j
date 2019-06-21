@@ -5,16 +5,16 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 /**
-* Test
-*
-* @author Bruki Mammad (bruki_mammad@mail.ru)
-* @version 2.0
-* @since 0.1
-*/
+ * Test.
+ *
+ * @author Bruki Mammad (bruki_mammad@mail.ru)
+ * @version 2.0
+ * @since 0.1
+ */
 public class CalculateTest {
 /**
-* Test echo.
-*/
+ * Test echo.
+ */
 
 @Test
  public void whenTakeNameThenThreeEchoPlusName() {
