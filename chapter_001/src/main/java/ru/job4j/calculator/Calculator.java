@@ -12,8 +12,6 @@ public class Calculator {
     }
     /**
      * Method add - складывает параметр  first и second.
-     * @param first.
-     * @param second.
      * @return value
      */
 
@@ -22,8 +20,6 @@ public class Calculator {
     }
     /**
      * Method subtract -  из параметра first вычитает second.
-     * @param first.
-     * @param second.
      * @return value.
      */
     public double div(double first, double second) {
@@ -32,17 +28,9 @@ public class Calculator {
 
     /**
      * Method div - делить параметр first на second.
-     * @param first.
-     * @param second.
      * @return value.
      */
     public double multiple(double first, double second) {
         return first * second;
     }
-    /**
-     * Method multiple - умножает параметр first на second.
-     * @param first.
-     * @param second.
-     * @return value.
-     */
 }
