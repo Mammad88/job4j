@@ -30,7 +30,7 @@ public class Triangle {
      * @return   треугольник, который можно построить.
      */
     private boolean exist(double a, double c, double b) {
-        return (a <= b + c) && (b <= a + c) && (c <= a + b);
+        return (a < b + c) && (b < a + c) && (c < a + b);
     }
 
 
