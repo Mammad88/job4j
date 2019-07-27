@@ -24,5 +24,15 @@ public class FindLoopTest {
         int expect = 3;
         assertThat(result, is(expect));
     }
+    @Test
+    public void whenArrayHas9Then4() {
+        FindLoop find = new FindLoop();
+        int[] input = new int[] {5, 10, 3, 1, 9};
+        int value = 9;
+        int result = find.indexOf(input, value);
+        int expect = 4;
+        assertThat(result, is(expect));
+    }
+
 }
 
