@@ -15,4 +15,14 @@ public class FindLoopTest {
         int expect = 0;
         assertThat(result, is(expect));
     }
+    @Test
+    public void whenArrayHas1Then3() {
+        FindLoop find = new FindLoop();
+        int[] input = new int[] {5, 10, 3, 1};
+        int value = 1;
+        int result = find.indexOf(input, value);
+        int expect = 3;
+        assertThat(result, is(expect));
+    }
 }
+
