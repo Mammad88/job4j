@@ -9,14 +9,10 @@ public class Car {
     public void drive(int kilometer) {
         this.volume = this.volume - kilometer;
         // метод drive рассчитывает сколько километров машина проедет.
-
     }
     public void fill(int gas) {
         this.volume = this.volume + 10 * gas;
         // метод fill -  рассчитывае сколько топлива надо машине.
-
-
-
     }
     public boolean canDrive() {
         boolean result = this.volume > 0;

@@ -5,7 +5,6 @@ public class Driver {
     public void passExamOn(char category) {
         this.license = category;
     }
-
     /**
      * method  -  hasLicense.
      */
@@ -15,5 +14,4 @@ public class Driver {
     public boolean canDrive(char category) {
         return this.license == category;
     }
-
 }

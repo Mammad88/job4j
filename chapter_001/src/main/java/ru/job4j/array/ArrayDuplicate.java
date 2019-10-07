@@ -10,9 +10,9 @@ import java.util.Arrays;
 
 public class ArrayDuplicate {
     /**
-     * Drop Duplicates;
-     * @param array input array;
-     * @return array without duplicates;
+     * Drop Duplicates.
+     * @param array input array.
+     * @return array without duplicates.
      */
     public String[] remove(String[] array) {
         int unique = array.length;

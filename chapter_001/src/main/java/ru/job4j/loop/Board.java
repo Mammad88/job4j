@@ -18,5 +18,3 @@ public class Board {
         return screen.toString();
     }
 }
-
-

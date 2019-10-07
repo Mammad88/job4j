@@ -25,7 +25,6 @@ public class Calculator {
     public double div(double first, double second) {
         return first / second;
     }
-
     /**
      * Method div - делить параметр first на second.
      * @return value.

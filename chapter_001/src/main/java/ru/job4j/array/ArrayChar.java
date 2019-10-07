@@ -1,24 +1,27 @@
 package ru.job4j.array;
-
 /**
  * @author Bruki Mammad (bruki_mammad@mail.ru)
  * @version $ID$
  * @since 28.07.2019
  */
-public class ArrayChar {
 
+public class ArrayChar {
     /**
      * Class - ArrayChar.
      * Проверяет. что слово начинается с префикса.
      * @param prefix префикс.
-     * @return если слово начинаеться с префикса
+     * @return если слово начинаеться с префикса.
      */
+
     public boolean startsWith(String word, String prefix) {
-         boolean result = true;
+        /**
+         * method startsWith.
+         * Проверяет, что массив wrd  имеет первые элементы одинаковые с массивом pref.
+         */
+        boolean result = true;
         char[] pref = prefix.toCharArray();
         char[] wrd = word.toCharArray();
-        //проверяет. что массив wrd  имеет первые элементы одинаковые с массивом pref.
-        if (pref.length > wrd.length) {
+            if (pref.length > wrd.length) {
               result = false;
         } else {
             for (int i = 0; i < pref.length; i++) {
@@ -31,5 +34,3 @@ public class ArrayChar {
         return result;
     }
 }
-
-

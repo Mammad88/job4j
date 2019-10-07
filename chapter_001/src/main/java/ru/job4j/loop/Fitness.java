@@ -7,7 +7,6 @@ package ru.job4j.loop;
  */
 public class Fitness {
     /**
-     *
      * @param ivan -  увеличивает  силу тяги в 3 раза.
      * @param nik - увеличивает силу тяги в 2 раза.
      * @return month.

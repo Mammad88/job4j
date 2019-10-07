@@ -10,11 +10,11 @@ import static org.junit.Assert.assertThat;
 
 public class FactorialTest {
     @Test
-    public void whenCalculateFactorialForFiveThenOneHundreedTwenty() {
+    public void whenCalculateFactorialForFiveThenOneHundredTwenty() {
        Factorial fact = new Factorial();
        int result = fact.calc(5);
        int expected = 120;
-        assertThat(result, closeTo(expected, 120));
+       assertThat(result, closeTo(expected, 120));
     }
 
     @Test
@@ -27,6 +27,5 @@ public class FactorialTest {
 
     private void assertThat(int result, Matcher<Double> closeTo) {
     }
-
 }
 

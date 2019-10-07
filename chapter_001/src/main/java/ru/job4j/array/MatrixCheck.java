@@ -6,7 +6,7 @@ package ru.job4j.array;
  */
 public class MatrixCheck {
     /**
-     * class - matrixCheck
+     * class - matrixCheck.
      * Check Matrix diagonal.
      * @param data matrix.
      * @return check.

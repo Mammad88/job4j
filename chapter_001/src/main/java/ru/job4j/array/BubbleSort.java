@@ -9,7 +9,7 @@ package ru.job4j.array;
 public class BubbleSort {
     /**
      * Class BubbleSort.
-     * @param array - не сортируемый массив
+     * @param array - не сортируемый массив.
      * @return array - сортируемый массив.
      */
     public int[] sort(int[] array) {

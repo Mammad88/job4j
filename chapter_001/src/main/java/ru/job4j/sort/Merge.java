@@ -12,18 +12,24 @@ public class Merge {
      * return итоговый массив.
      */
     public int[] merge(int[] left, int[] right) {
-        int[] rsl = new int[left.length + right.length]; // Создание итогового массива.
-        int i = 0, j = 0, k = 0; // Индексы итерации по массивам.
+        // Создание итогового массива.
+        int[] rsl = new int[left.length + right.length];
+        // Индексы итерации по массивам.
+        int i = 0, j = 0, k = 0;
         while (i < left.length && j < right.length) {
             rsl[k++] = left[i] < right[j] ? left[i++] : right[j++];
         }
-        while (i < left.length) { //пока первый элемент левого массива меньше всего масива.
-            rsl[k++] = left[i++]; // первый элемент левого массива добавляем в итоговый массив.
+        //пока первый элемент левого массива меньше всего масива.
+        while (i < left.length) {
+            // первый элемент левого массива добавляем в итоговый массив.
+            rsl[k++] = left[i++];
         }
-        while (j < right.length) { //пока первый элемент правого массива меньше всего масива.
-            rsl[k++] = right[j++]; //первый элемент правого массива добавляем в итоговый массив.
+        //пока первый элемент правого массива меньше всего масива.
+        while (j < right.length) {
+            //первый элемент правого массива добавляем в итоговый массив.
+            rsl[k++] = right[j++];
         }
-        return rsl; //возврашаем итоговый массив.
+        return rsl;
     }
 
     public static void main(String[] args) {

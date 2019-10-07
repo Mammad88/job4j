@@ -6,8 +6,8 @@ package ru.job4j.calculator;
 public class Size {
     /**
      * Метод add складывает left и right.
-     * @param left
-     * @param right
+     * @param left - левый.
+     * @param right - проавый.
      * @return result.
      */
     public int add(int left, int right) {
@@ -17,7 +17,7 @@ public class Size {
 
     /**
      * Метод info - выводить информацию на консоль.
-     * @param size
+     * @param size - размер.
      */
     public void info(int size) {
     System.out.println("Your size is: " + size);
@@ -25,7 +25,7 @@ public class Size {
 
     /**
      * метод main.
-     * @param args
+     * @param args - аргументы.
      */
     public static void main(String[] args) {
     Size size = new Size();
