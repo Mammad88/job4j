@@ -13,24 +13,22 @@ public class Battery {
     }
 
     /**
-     * method exchange - списывает  заряд из батареи у кого вызывали  и добавляет к объекту another.
+     * method exchange -  списывает заряд из батареи у кого вызывали метод exchange и добавляет к объекту another.
      * @param another - another.
      */
-
     public void exchange(Battery another) {
-        this.load = this.load + another.load;
+        this.load =  this.load + another.load;
         another.load = 0;
     }
 
     /**
-     * Создание объекта first и second типа Battery.
+     * Создание объектов first и  second типа Battery.
      * @param args - args.
-     * вызов метода exchange.
      */
 
     public static void main(String[] args) {
-        Battery first = new Battery(15);
-        Battery second = new Battery(5);
+        Battery first = new Battery(80);
+        Battery second = new Battery(20);
         System.out.println("first : " + first.load + ". second : " + second.load);
         first.exchange(second);
         System.out.println("first : " + first.load + ". second : " + second.load);
