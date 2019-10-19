@@ -23,4 +23,18 @@ public class MaxTest {
         int result = max.max(3, 3);
         assertThat(result, is(3));
     }
+    @Test
+    public void whichOfTheThreeNumbersIsGreater() {
+        Max maximum = new Max();
+        int result = maximum.max(1, 2, 3);
+        int expected = 3;
+        assertThat(result, is(expected));
+    }
+    @Test
+    public void whichOfTheFourNumbersIsGreater() {
+        Max supermax = new Max();
+        int result = supermax.max(1, 2, 3, 4);
+        int expected = 4;
+        assertThat(result, is(expected));
+    }
 }
