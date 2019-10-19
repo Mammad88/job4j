@@ -9,9 +9,10 @@ import static org.junit.Assert.assertThat;
 public class PointTest {
     @Test
     public void whenZeroAndTenThenTen() {
-        Point point;
-        point = new Point();
-        double result = point.distance(0, 0, 0, 10);
-        assertThat(result, is(10D));
+        Point a = new Point(0, 0);
+        Point b = new Point(0, 2);
+        double result = a.distance(b);
+        System.out.println(result);
+        assertThat(result, is(2D));
     }
 }
