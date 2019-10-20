@@ -17,8 +17,8 @@ public class PointTest {
 
     @Test
     public void whenZeroAndZeroAndThreeThenThree() {
-        Point point1 = new Point(0, 0,0);
-        Point point2 = new Point(0, 0,3);
+        Point point1 = new Point(0, 0, 0);
+        Point point2 = new Point(0, 0, 3);
         double result = point1.distance3d(point2);
         double expected = 3D;
         System.out.println(String.format("Result is %s", result));
