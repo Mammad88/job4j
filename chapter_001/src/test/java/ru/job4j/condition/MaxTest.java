@@ -32,8 +32,8 @@ public class MaxTest {
     }
     @Test
     public void whichOfTheFourNumbersIsGreater() {
-        Max supermax = new Max();
-        int result = supermax.max(1, 2, 3, 4);
+        Max max = new Max();
+        int result = max.max(1, 2, 3, 4);
         int expected = 4;
         assertThat(result, is(expected));
     }
