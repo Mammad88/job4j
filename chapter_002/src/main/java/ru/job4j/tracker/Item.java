@@ -11,6 +11,7 @@ private String name;
     }
 
     public Item(String name) {
+        this.name = name;
     }
 
     public String getId() {

@@ -40,7 +40,7 @@ public class Tracker {
      */
 
     private int indexOf(String id) {
-        int rsl = 0;
+        int rsl = -1;
         for (int index = 0; index < position; index++) {
             if (items[index].getId().equals(id)) {
                 rsl = index;
@@ -51,19 +51,22 @@ public class Tracker {
     }
 
     /**
-     * Метод findById выполняет поиск заявок по id.
-     * @param id.
-     * @return result.
+     * Метод findById возвращает элемент по id, либо null.
+     * @param id скомого элемента.
+     * @return элемент Item, либо null.
      */
 
     public Item findById(String id) {
-        return items[indexOf(id)];
+        int i = indexOf(id);
+        if (i != -1) {
+            return items[i];
+        }
+        return  null;
     }
 
-
     /**
-     * Метод выводит список всех заявок.
-     * @return result.
+     * Метод возвращает копию массива без null элементов.
+     * @return копию массива.
      */
 
     public Item[] findAll() {
@@ -73,7 +76,7 @@ public class Tracker {
     /**
      * Поиск заявок по наименованию и копирование их в массив.
      * @param key -  ввод имени для поиска.
-     * @return список заявок.
+     * @return новый массив.
      */
 
     public Item[] findByName(String key) {
@@ -88,12 +91,19 @@ public class Tracker {
         return Arrays.copyOf(result, count);
     }
 
+    /**
+     * Метод заменяет ячейку в массиве.
+     * @param id заменяемой ячейки.
+     * @param item новая заявка.
+     * @return удалось ли заменить.
+     */
+
     public boolean replace(String id, Item item) {
         boolean result = false;
         item.setId(id);
         for (int i = 0; i < position; i++) {
             if (items[i].getId().equals(id)) {
-                item.setId(id);
+                items[i] = item;
                 result = true;
                 break;
             }
@@ -101,6 +111,11 @@ public class Tracker {
         return result;
     }
 
+    /**
+     * Метод удаляет ячейку в массиве и сдвигает пустую ячейку в конец массива.
+     * @param id удаляемая ячейка.
+     * @return удалось ли удалить.
+     */
     public boolean delete(String id) {
         boolean result = false;
         for (int i = 0; i < position; i++) {
