@@ -18,11 +18,11 @@ public class TrackerTest {
     public void whenFindAllThenReturnAll() {
         Tracker tracker = new Tracker();
         // Создаем три заявки и добавляем их все в трекер. Каждая получает уникальный id.
-        Item first = new Item("100L", "test1");
+        Item first = new Item("test1");
         tracker.add(first);
-        Item second = new Item("200L", "test2");
+        Item second = new Item("test2");
         tracker.add(second);
-        Item third = new Item("300L", "test3");
+        Item third = new Item("test3");
         tracker.add(third);
         // Создаем ожидаемый массив класса Item.
         Item[] expected = new Item[3];
@@ -67,6 +67,4 @@ public class TrackerTest {
         // Проверяем, что массив, передаваемый через метод findAll и ожидаемый массив равны.
         assertThat(tracker.findByName("test2"), is(expected));
     }
-
-
 }
