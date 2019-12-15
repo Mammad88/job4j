@@ -36,20 +36,30 @@ public class Tracker {
     }
 
     /**
+     * Создаем новый метод, который будет возвращать индекс по id
+     */
+
+    private int indexOf(String id) {
+        int rsl = 0;
+        for (int index = 0; index < position; index++) {
+            if (items[index].getId().equals(id)) {
+                rsl = index;
+                break;
+            }
+        }
+        return rsl;
+    }
+
+    /**
      * Метод findById выполняет поиск заявок по id.
      * @param id.
      * @return result.
      */
+
     public Item findById(String id) {
-        Item result = null;
-        for (int index = 0; index != this.position; index++) {
-            if (items[index] != null && items[index].getId().equals(id)) {
-                result = items[index];
-                break;
-            }
-        }
-        return result;
+        return items[indexOf(id)];
     }
+
 
     /**
      * Метод выводит список всех заявок.
@@ -76,5 +86,31 @@ public class Tracker {
             }
         }
         return Arrays.copyOf(result, count);
+    }
+
+    public boolean replace(String id, Item item) {
+        boolean result = false;
+        item.setId(id);
+        for (int i = 0; i < position; i++) {
+            if (items[i].getId().equals(id)) {
+                item.setId(id);
+                result = true;
+                break;
+            }
+        }
+        return result;
+    }
+
+    public boolean delete(String id) {
+        boolean result = false;
+        for (int i = 0; i < position; i++) {
+            if (items[i].getId().equals(id)) {
+                result = true;
+                System.arraycopy(items, i + 1, items, i, position - i);
+                position--;
+                break;
+            }
+        }
+        return result;
     }
 }
