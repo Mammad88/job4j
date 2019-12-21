@@ -12,56 +12,40 @@ public class Matches {
         String player1 = input.nextLine();
         System.out.println("Введите имя второго игрока!");
         String player2 = input.nextLine();
-        System.out.println("начинаем игру!");
+        boolean turn = true;
         System.out.println("1. спичку забираю");
         System.out.println("2. спички забираю");
         System.out.println("3. спички забираю");
-        System.out.println(player1 + " Заберите от 1 до 3 спичек");
-        int select = Integer.valueOf(input.nextLine());
         int countMatches = 11;
-        boolean game = false;
-
+        System.out.println(" Заберите от 1 до 3 спичек");
+        int select = Integer.valueOf(input.nextLine());
         while (countMatches > 0) {
             countMatches = countMatches - select;
-            System.out.println(player1 + " осталос спичек: " + countMatches);
-            if (countMatches == 0) {
-                System.out.println("вы выиграли");
-            }
-            break;
-        }
+            System.out.println(" осталос спичек: " + countMatches);
+            System.out.println(" Заберите от 1 до 3 спичек");
+            select = Integer.valueOf(input.nextLine());
+            System.out.println(" осталос спичек: " + countMatches);
 
-        System.out.println(player2 + " Заберите от 1 до 3 спичек");
-        select = Integer.valueOf(input.nextLine());
-        while (countMatches > 0) {
-            countMatches = countMatches - select;
-            System.out.println(player2 + " осталос спичек: " + countMatches);
-            if (countMatches == 0) {
-                System.out.println("вы выиграли");
+            switch (select) {
+                case 1:
+                    System.out.println("одну спичку забираю");
+                    break;
+                case 2:
+                    System.out.println("две спички забираю!");
+                    break;
+                case 3:
+                    System.out.println("три спички забираю!");
+                    break;
+                default:
+                    System.out.println("такой цифры нет");
+                    break;
             }
-            break;
-        }
 
-        System.out.println(player1 + " Заберите от 1 до 3 спичек");
-        select = Integer.valueOf(input.nextLine());
-        while (countMatches > 0) {
-            countMatches = countMatches - select;
-            System.out.println(player1 + " осталос спичек: " + countMatches);
-            if (countMatches == 0) {
-                System.out.println("вы выиграли");
+            if (countMatches - select == 0 ) {
+                System.out.println("вы выиграли ");
+                break;
             }
-            break;
         }
-
-        System.out.println(player2 + " Заберите от 1 до 3 спичек");
-        select = Integer.valueOf(input.nextLine());
-        while (countMatches > 0) {
-            countMatches = countMatches - select;
-            System.out.println(player2 + " осталос спичек: " + countMatches);
-            if (countMatches == 0) {
-                System.out.println("вы выиграли");
-            }
-            break;
-        }
-        game = true;
+        turn = false;
     }
 }
