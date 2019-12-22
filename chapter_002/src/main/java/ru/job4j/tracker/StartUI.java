@@ -13,55 +13,68 @@ public class StartUI {
 
             if (select == 0) {
                 System.out.println("=== Create a new Item ====");
-                System.out.print("Enter name: ");
+                System.out.print("Введите имя заявки: ");
                 String name = scanner.nextLine();
                 Item item = new Item(name);
-                System.out.println("Добавление заявки: " + item);
+                System.out.println("Добавление новой заявки: " + item);
                 tracker.add(item);
 
             } else if (select == 1) {
                 System.out.println("=== Show all items ===");
                 System.out.println("Enter name: ");
                 String name = scanner.nextLine();
-                Item item1 = new Item(name);
-                System.out.println("Список всех заявок: " + item1);
+                Item item = new Item(name);
+                System.out.println("Список всех заявок: " + item);
                 tracker.findAll();
 
             } else if (select == 2) {
                  System.out.println("=== Edit item ===");
-                 System.out.println("Enter name: ");
-                 String name2 = scanner.nextLine();
-                 System.out.println("Enter id: ");
+                 System.out.println("Введите ID редактируемой заявки: ");
                  String id = scanner.nextLine();
-                 Item item1 = new Item(name2);
-                System.out.println("Редактирование заявок: " + item1);
-                 tracker.replace(id, item1);
+                 System.out.println("Введите новое имя заявки: ");
+                 String name = scanner.nextLine();
+                 Item item = new Item(name);
+                 if (tracker.replace(id, item)) {
+                     System.out.println("Item has been edited!");
+                 } else {
+                     System.out.println("Item was not found!");
+                 }
 
             } else if (select == 3) {
                 System.out.println("=== Delete item ===");
                 System.out.println("Enter name: ");
-                String name3 = scanner.nextLine();
+                String name = scanner.nextLine();
                 System.out.println("Enter id: ");
-                String id2 = scanner.nextLine();
-                Item item2 = new Item(id2, name3);
-                System.out.println("Удаление заявок: " + item2);
-                tracker.delete(id2);
+                String id = scanner.nextLine();
+                Item item = new Item(id, name);
+                System.out.println("Удаление заявки: " + item);
+                tracker.delete(id);
 
             } else if (select == 4) {
                 System.out.println("=== Find item by Id ===");
                 System.out.println("Enter id: ");
                 String id =  scanner.nextLine();
-                Item item3 = new Item(id);
-                System.out.println("Получение заявки по id: " + item3);
-                tracker.findById(id);
+                Item item = tracker.findById(id);
+                if (item.getName().contains("null")) {
+                    System.out.println("========= Заявка не найдена! ========");
+                } else {
+                    System.out.println("========== Заявка найдена! ==========");
+                    System.out.println("Получение заявки по id: " + item.getId());
+                }
 
             } else if (select == 5) {
                 System.out.println("=== Find items by name ===");
                 System.out.println("Enter name: ");
-                String name3 = scanner.nextLine();
-                Item item4  = new Item(name3);
-                tracker.findByName(name3);
-                System.out.println("Получение списка по имени: " + item4);
+                String name = scanner.nextLine();
+                Item[] targetItems  = tracker.findByName(name);
+                if (targetItems.length == 0) {
+                    System.out.printf("--- По имени %s%s%s%s%n", "\"", name, "\"", " заявки не найдены! ---");
+                } else {
+                    System.out.printf("--- По имени %s%s%s%s%n", "\"", name, "\"", " найдены следующие заявки: ---");
+                }
+                for (Item items: targetItems) {
+                    System.out.println("Получение заявки по имени: " + items.getName());
+                }
 
             } else if (select == 6) {
                 System.out.println("=== Exit Program ===");
