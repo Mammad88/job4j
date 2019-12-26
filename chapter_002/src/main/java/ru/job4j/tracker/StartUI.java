@@ -18,9 +18,10 @@ public class StartUI {
             } else if (select == 1) {
                 System.out.println("=== Show all items ===");
                 String name = input.askStr("Enter name: ");
-                Item item = new Item(name);
-                System.out.println("Список всех заявок: " + item);
-                tracker.findAll();
+                Item[] targetItem = tracker.findAll();
+                for (Item items: targetItem) {
+                    System.out.println("Список всех заявок: " + items.getName());
+                }
 
             } else if (select == 2) {
                  System.out.println("=== Edit item ===");
