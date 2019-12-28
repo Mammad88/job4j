@@ -14,7 +14,7 @@ public class StartUI {
         System.out.println("=== Show all items ===");
         String name = input.askStr("Enter name: ");
         Item[] targetItem = tracker.findAll();
-        for (Item items: targetItem) {
+        for (Item items : targetItem) {
             System.out.println("Список всех заявок: " + items.getName());
         }
     }
@@ -25,19 +25,20 @@ public class StartUI {
         String name = input.askStr("Введите новое имя заявки: ");
         Item item = new Item(name);
         if (tracker.replace(id, item)) {
-        System.out.println("Item has been edited!");
+            System.out.println("Item has been edited!");
         } else {
-        System.out.println("Item was not found!");
+            System.out.println("Item was not found!");
         }
     }
 
     public static void deleteItem(Input input, Tracker tracker) {
         System.out.println("=== Delete item ===");
-        String name = input.askStr("Enter name: ");
         String id = input.askStr("Enter id: ");
-        Item item = new Item(id, name);
-        System.out.println("Удаление заявки: " + item);
-        tracker.delete(id);
+        if (tracker.delete(id)) {
+            System.out.println("Item has been deleted!");
+        } else {
+            System.out.println("Item was not found!");
+        }
     }
 
     public static void findById(Input input, Tracker tracker) {
@@ -45,7 +46,7 @@ public class StartUI {
         String id = input.askStr("Enter id: ");
         Item item = tracker.findById(id);
         if (item == null) {
-        System.out.println("========= Заявка не найдена! ========");
+            System.out.println("========= Заявка не найдена! ========");
         } else {
             System.out.println("========== Заявка найдена! ==========");
             System.out.println("Получение заявки по id: " + item.getId());
@@ -55,14 +56,14 @@ public class StartUI {
     public static void findByName(Input input, Tracker tracker) {
         System.out.println("=== Find items by name ===");
         String name = input.askStr("Enter name: ");
-        Item[] targetItems  = tracker.findByName(name);
+        Item[] targetItems = tracker.findByName(name);
         if (targetItems.length == 0) {
             System.out.printf("--- По имени %s%s%s%s%n", "\"", name, "\"", " заявки не найдены! ---");
         } else {
             System.out.printf("--- По имени %s%s%s%s%n", "\"", name, "\"", " найдены следующие заявки: ---");
         }
-        for (Item items: targetItems) {
-        System.out.println("Получение заявки по имени: " + items.getName());
+        for (Item items : targetItems) {
+            System.out.println("Получение заявки по имени: " + items.getName());
         }
     }
 
@@ -79,13 +80,13 @@ public class StartUI {
                 StartUI.showAllItems(input, tracker);
 
             } else if (select == 2) {
-                 StartUI.editItem(input, tracker);
+                StartUI.editItem(input, tracker);
 
             } else if (select == 3) {
                 StartUI.deleteItem(input, tracker);
 
             } else if (select == 4) {
-               StartUI.findById(input, tracker);
+                StartUI.findById(input, tracker);
 
             } else if (select == 5) {
                 StartUI.findByName(input, tracker);
@@ -109,8 +110,8 @@ public class StartUI {
     }
 
     public static void main(String[] args) {
-       Input input = new ConsoleInput();
-       Tracker tracker = new Tracker();
+        Input input = new ConsoleInput();
+        Tracker tracker = new Tracker();
         //Вызов не статического метода. Необходимо обратиться через объект.
         new StartUI().init(input, tracker);
         // Вызов статического метода. Обращаемся через класс.
