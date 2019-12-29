@@ -2,6 +2,7 @@ package ru.job4j.tracker;
 
 import java.util.Arrays;
 import java.util.Random;
+
 import static java.util.Arrays.*;
 
 public class Tracker {
@@ -17,6 +18,7 @@ public class Tracker {
 
     /**
      * Метод добавления заявки в хранилище.
+     *
      * @param item новая заявка.
      */
     public Item add(Item item) {
@@ -28,6 +30,7 @@ public class Tracker {
     /**
      * Метод генерирует уникальный ключ для заявки.
      * Так как у заявки нет уникальности полей, имени и описание. Для идентификации нам нужен уникальный ключ.
+     *
      * @return Уникальный ключ.
      */
     private String generateId() {
@@ -52,6 +55,7 @@ public class Tracker {
 
     /**
      * Метод findById возвращает элемент по id, либо null.
+     *
      * @param id скомого элемента.
      * @return элемент Item, либо null.
      */
@@ -61,11 +65,12 @@ public class Tracker {
         if (i != -1) {
             return items[i];
         }
-        return  null;
+        return null;
     }
 
     /**
      * Метод возвращает копию массива без null элементов.
+     *
      * @return копию массива.
      */
 
@@ -75,6 +80,7 @@ public class Tracker {
 
     /**
      * Поиск заявок по наименованию и копирование их в массив.
+     *
      * @param key -  ввод имени для поиска.
      * @return новый массив.
      */
@@ -93,7 +99,8 @@ public class Tracker {
 
     /**
      * Метод заменяет ячейку в массиве.
-     * @param id заменяемой ячейки.
+     *
+     * @param id   заменяемой ячейки.
      * @param item новая заявка.
      * @return удалось ли заменить.
      */
@@ -113,6 +120,7 @@ public class Tracker {
 
     /**
      * Метод удаляет ячейку в массиве и сдвигает пустую ячейку в конец массива.
+     *
      * @param id удаляемая ячейка.
      * @return удалось ли удалить.
      */

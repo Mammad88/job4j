@@ -1,6 +1,12 @@
 package ru.job4j.tracker;
 
 public class StartUI {
+    /**
+     * method createItem - реализует добавление новой заявки в хранилище.
+     *
+     * @param input   - ввод данных.
+     * @param tracker - хранилище заявок.
+     */
 
     public static void createItem(Input input, Tracker tracker) {
         System.out.println("=== Create a new Item ====");
@@ -10,6 +16,13 @@ public class StartUI {
         tracker.add(item);
     }
 
+    /**
+     * метод showAllItems - отображает все созданные заявки.
+     *
+     * @param input   - ввод данных.
+     * @param tracker - хранилище заявок.
+     */
+
     public static void showAllItems(Input input, Tracker tracker) {
         System.out.println("=== Show all items ===");
         String name = input.askStr("Enter name: ");
@@ -18,6 +31,13 @@ public class StartUI {
             System.out.println("Список всех заявок: " + items.getName());
         }
     }
+
+    /**
+     * метод editItem - меняет ячейку в массиве требуемой ячейкой.
+     *
+     * @param input   - ввод данных.
+     * @param tracker - хранилище заявок.
+     */
 
     public static void editItem(Input input, Tracker tracker) {
         System.out.println("=== Edit item ===");
@@ -31,6 +51,13 @@ public class StartUI {
         }
     }
 
+    /**
+     * метод deleteItem - удаляет заявки по id.
+     *
+     * @param input   - ввод данных.
+     * @param tracker - хранилище заявок.
+     */
+
     public static void deleteItem(Input input, Tracker tracker) {
         System.out.println("=== Delete item ===");
         String id = input.askStr("Enter id: ");
@@ -40,6 +67,13 @@ public class StartUI {
             System.out.println("Item was not found!");
         }
     }
+
+    /**
+     * метод findByid - проводит поиск заявки по id.
+     *
+     * @param input   - ввод данных.
+     * @param tracker - хранилище заявок.
+     */
 
     public static void findById(Input input, Tracker tracker) {
         System.out.println("=== Find item by Id ===");
@@ -52,6 +86,13 @@ public class StartUI {
             System.out.println("Получение заявки по id: " + item.getId());
         }
     }
+
+    /**
+     * метод findByName - проводит поиск заявки по имени.
+     *
+     * @param input   - ввод данных.
+     * @param tracker - хранилище заявок.
+     */
 
     public static void findByName(Input input, Tracker tracker) {
         System.out.println("=== Find items by name ===");
@@ -66,6 +107,10 @@ public class StartUI {
             System.out.println("Получение заявки по имени: " + items.getName());
         }
     }
+
+    /**
+     * Цикл программы, в ходе которого проверяется пользовательский ввод и отоброжаются результаты.
+     */
 
     public void init(Input input, Tracker tracker) {
         boolean run = true;
@@ -97,6 +142,10 @@ public class StartUI {
             }
         }
     }
+
+    /**
+     * Отображает меню перед вводом значений.
+     */
 
     private void showMenu() {
         System.out.println("Menu.");
