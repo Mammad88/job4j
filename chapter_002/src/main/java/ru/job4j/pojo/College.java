@@ -10,9 +10,6 @@ public class College {
         student.setArrival(new Date());
         student.setCourse(1);
         student.setUniversity("Kuban state technological university");
-
-
-        System.out.println(student.getFullName() + " учиться в " + student.getUniversity() +
-                " на " + student.getCourse() + " курсе" + " в " + student.getGroup() + " группе" );
+        System.out.println(student.getFullName() + " учиться в " + student.getUniversity() + " на " + student.getCourse() + " курсе" + " в " + student.getGroup() + " группе");
     }
 }

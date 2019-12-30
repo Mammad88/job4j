@@ -1,4 +1,5 @@
 package ru.job4j.oop;
+
 /**
  * @author Bruki Mammad (bruki_mammad@mail.ru)
  * @version $id$
@@ -9,9 +10,10 @@ public class Jukebox {
     /**
      * class - Jukebox.
      * method music - обрабатывает список песен.
+     *
      * @param position - позиция.
      */
-    public void music (int position) {
+    public void music(int position) {
         if (position == 1) {
             System.out.println("Пусть бегут неуклюже.");
         } else if (position == 2) {

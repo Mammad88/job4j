@@ -41,7 +41,7 @@ public class Matches {
                     break;
             }
 
-            if (countMatches - select == 0 ) {
+            if (countMatches - select == 0) {
                 System.out.println("вы выиграли ");
                 break;
             }

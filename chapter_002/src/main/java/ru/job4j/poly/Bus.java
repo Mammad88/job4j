@@ -2,8 +2,8 @@ package ru.job4j.poly;
 
 public class Bus implements Transport {
 
-public int priceFuel;
-public long fuel;
+    public int priceFuel;
+    public long fuel;
 
     @Override
     public void drive() {
@@ -11,7 +11,7 @@ public long fuel;
     }
 
     @Override
-    public void Passengers(int passengers) {
+    public void passenger(int passengers) {
         System.out.println("количество пассажиров: " + passengers);
 
     }
@@ -22,4 +22,3 @@ public long fuel;
         return price;
     }
 }
-

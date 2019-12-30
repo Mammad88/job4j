@@ -4,7 +4,7 @@ public interface Transport {
 
     public void drive();
 
-    public void Passengers (int passengers);
+    public void passenger(int passengers);
 
-    public long price (long fuel, int priceFuel);
+    public long price(long fuel, int priceFuel);
 }
