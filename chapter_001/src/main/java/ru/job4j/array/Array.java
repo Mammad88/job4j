@@ -12,8 +12,9 @@ public class Array {
         for (int i = 0; i < massiv.length; i++) {
             massiv[i] = random.nextInt(100);
         }
-        int [][] table1 = new int [3][5]; //двумерный пустой массив.
-        int [][] table2 = {{1, 2, 3, 4, 5},{6, 7, 8, 9, 10}, {11, 12, 13, 14, 15}};  // Двумерный заполненный масив.
+        
+        int[][] table1 = new int[3][5]; //двумерный пустой массив.
+        int[][] table2 = {{1, 2, 3, 4, 5}, {6, 7, 8, 9, 10}, {11, 12, 13, 14, 15}};  // Двумерный заполненный масив.
         System.out.println("table2.length = " + table2.length);
         for (int i = 0; i <= 2; i++) { // пробег по столбцам.
             for (int j = 0; j <= 4; j++) { //пробег по строкам.
@@ -21,6 +22,7 @@ public class Array {
             }
             System.out.println();
         }
+        
         table2[1][3] = 0; // замена значение по индексу (присвоение).
         showTriangle();
 
@@ -30,6 +32,7 @@ public class Array {
             System.out.print(massiv[i] + " ");
         }
     }
+    
     //Вывод треугольника.
     private static void showTriangle() {
         char[][] triangleArray = new char[10][];
@@ -43,12 +46,14 @@ public class Array {
         triangleArray[7] = new char[8];
         triangleArray[8] = new char[9];
         triangleArray[9] = new char[10];
+        
         //Заполнение всех элементов символом.
         for (int i = 0; i < triangleArray.length; i++) {
             for (int j = 0; j < triangleArray[i].length; j++) {
                 triangleArray[i][j] = '*';
             }
         }
+
         for (int i = 0; i < triangleArray.length; i++) {
             for (int j = 0; j < triangleArray[i].length; j++) {
                 System.out.print(triangleArray[i][j] + " ");
