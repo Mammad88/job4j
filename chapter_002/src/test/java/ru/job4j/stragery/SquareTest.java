@@ -10,6 +10,7 @@ import static org.junit.Assert.assertThat;
  * @version $Id$
  * @since 31.12.2019
  */
+
 public class SquareTest {
     @Test
     public void whenDrawSquare() {
