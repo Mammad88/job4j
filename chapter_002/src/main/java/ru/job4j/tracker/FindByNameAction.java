@@ -24,10 +24,11 @@ public class FindByNameAction implements UserAction {
         String name = input.askStr("Enter name: ");
         Item[] targetItems = tracker.findByName(name);
         if (targetItems.length == 0) {
-            System.out.printf("--- По имени %s%s%s%s%n", "\"", name, "\"", " заявки не найдены! ---");
+            System.out.println("--- По имени " + name + " заявки не найдены! ---");
         } else {
-            System.out.printf("--- По имени %s%s%s%s%n", "\"", name, "\"", " найдены следующие заявки: ---");
+            System.out.println("--- По имени " + name + " найдены следующие заявки: ---");
         }
+
         for (Item items : targetItems) {
             System.out.println("Получение заявки по имени: " + items.getName());
         }
