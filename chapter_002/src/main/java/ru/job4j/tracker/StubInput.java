@@ -1,5 +1,11 @@
 package ru.job4j.tracker;
 
+/**
+ * @author Bruki Mammad (bruki_mammd@mail.ru)
+ * @version $Id$
+ * @since 20.01.2020
+ */
+
 public class StubInput implements Input {
     private String[] answers;
     private int position = 0;
@@ -16,5 +22,10 @@ public class StubInput implements Input {
     @Override
     public int askInt(String question) {
         return Integer.valueOf(askStr(question));
+    }
+
+    @Override
+    public int askInt(String question, int max) {
+        return askInt(question);
     }
 }
