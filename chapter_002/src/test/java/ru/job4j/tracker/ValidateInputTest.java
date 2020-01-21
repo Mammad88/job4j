@@ -10,8 +10,8 @@ import static org.hamcrest.Matchers.is;
 
 /**
  * @author Bruki Mammad (bruki_mammd@mail.ru)
- * @version $Id$
- * @since 20.01.2020
+ * @version $2.0$
+ * @since 21.01.2020
  */
 
 public class ValidateInputTest {
@@ -21,8 +21,7 @@ public class ValidateInputTest {
         ByteArrayOutputStream mem = new ByteArrayOutputStream();
         PrintStream out = System.out;
         System.setOut(new PrintStream(mem));
-        String[] data = {"one", "1"};
-        ValidateInput input = new ValidateStubInput(data);
+        ValidateInput input = new ValidateInput(new StubInput(new String[]{"one", "1"}));
         input.askInt("Enter");
         assertThat(
                 mem.toString(),
