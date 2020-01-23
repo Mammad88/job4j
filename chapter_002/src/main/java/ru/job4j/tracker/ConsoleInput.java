@@ -23,16 +23,9 @@ public class ConsoleInput implements Input {
     }
 
     @Override
-    public int askInt(String question, int[] max) {
+    public int askInt(String question, int max) {
         int select = askInt(question);
-        boolean exist = false;
-        for (int value : max) {
-            if (select == value) {
-                exist = true;
-                break;
-            }
-        }
-        if (!exist) {
+        if (select < 0 || (select >= max)) {
             throw new IllegalStateException(String.format("Out of about %s > [0, %s]", select, max));
         }
         return select;

@@ -36,7 +36,7 @@ public class ValidateInput implements Input {
     }
 
     @Override
-    public int askInt(String question, int[] max) {
+    public int askInt(String question, int max) {
         boolean invalid = true;
         int value = -1;
         do {
