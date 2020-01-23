@@ -1,6 +1,8 @@
 package ru.job4j.tracker;
 
 /**
+ * Class for manual input.
+ *
  * @author Bruki Mammad (bruki_mammd@mail.ru)
  * @version $2.0$
  * @since 21.01.2020
@@ -34,7 +36,7 @@ public class ValidateInput implements Input {
     }
 
     @Override
-    public int askInt(String question, int max) {
+    public int askInt(String question, int[] max) {
         boolean invalid = true;
         int value = -1;
         do {
