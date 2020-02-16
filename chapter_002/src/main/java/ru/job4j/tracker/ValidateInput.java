@@ -3,7 +3,7 @@ package ru.job4j.tracker;
 /**
  * Class for manual input.
  *
- * @author Bruki Mammad (bruki_mammd@mail.ru)
+ * @author Bruki Mammad (bruki_mammad@mail.ru)
  * @version $2.0$
  * @since 21.01.2020
  */

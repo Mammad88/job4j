@@ -3,7 +3,7 @@ package ru.job4j.tracker;
 import java.util.Scanner;
 
 /**
- * @author Bruki Mammad (bruki_mammd@mail.ru)
+ * @author Bruki Mammad (bruki_mammad@mail.ru)
  * @version $Id$
  * @since 20.01.2020
  */
