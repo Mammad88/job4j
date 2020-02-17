@@ -1,4 +1,4 @@
-package ru.job4j.coffee;
+package ru.job4j.coffeemachine;
 
 import java.util.Arrays;
 
@@ -12,22 +12,29 @@ import java.util.Arrays;
 
 public class Machine {
 
-    private final int[] COINS = {10, 5, 2, 1};
+    /**
+     * Монеты в автомате.
+     */
+    private final int[] coins = {10, 5, 2, 1};
 
     /**
+     * Метод выдачи сдачи для автомата.
+     *
      * @param money - общая сумма денег.
      * @param price - цена кофе в кофемашине.
      * @return rsl - возвращаем сдачу в кофемашине.
      */
-
-    public int[] change(int money, int price) {
+    public int[] changes(int money, int price) throws NeedMoreMoneyException {
+        if (money - price < 0) {
+            throw new NeedMoreMoneyException();
+        }
         int changes = (money > price ? money - price : 0);
         int[] rsl = new int[100];
         int size = 0;
-        for (int index = 0; index < COINS.length; index++) {
-            while (changes >= COINS[index]) {
-                changes -= COINS[index];
-                rsl[size++] = COINS[index];
+        for (int index = 0; index < coins.length; index++) {
+            while (changes >= coins[index]) {
+                changes -= coins[index];
+                rsl[size++] = coins[index];
             }
         }
         return Arrays.copyOf(rsl, size);
