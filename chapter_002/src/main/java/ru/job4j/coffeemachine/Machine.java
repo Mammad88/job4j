@@ -28,7 +28,7 @@ public class Machine {
         if (money - price < 0) {
             throw new NeedMoreMoneyException();
         }
-        int changes = (money > price ? money - price : 0);
+        int changes =  money - price;
         int[] rsl = new int[100];
         int size = 0;
         for (int index = 0; index < coins.length; index++) {
