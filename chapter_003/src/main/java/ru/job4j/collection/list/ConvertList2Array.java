@@ -7,13 +7,14 @@ import java.util.List;
  * Конвертируем лист в двумерный массив.
  *
  * @author Bruki Mammad (bruki_mammad@mail.ru)
- * @version 1.0
+ * @version 2.0
  * @since 24.02.2020
  */
 public class ConvertList2Array {
 
     public static int[][] toArray(List<Integer> list, int rows) {
-        int cells = list.size() % 3 != 0 ? list.size() / rows + 1 : list.size() / rows;
+        int groups = (int) Math.ceil((double) (list.size() / rows));
+        int cells = list.size() % 3 != 0 ? groups + 1 : groups;
         int[][] array = new int[rows][cells];
         int row = 0, cell = 0;
         for (Integer num : list) {
