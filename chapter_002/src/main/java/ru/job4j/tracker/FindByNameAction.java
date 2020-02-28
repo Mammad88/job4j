@@ -1,5 +1,7 @@
 package ru.job4j.tracker;
 
+import java.util.List;
+
 /**
  * @author Bruki Mammad (bruki_mammd@mail.ru)
  * @version $Id$
@@ -22,8 +24,8 @@ public class FindByNameAction implements UserAction {
     @Override
     public boolean execute(Input input, Tracker tracker) {
         String name = input.askStr("Enter name: ");
-        Item[] targetItems = tracker.findByName(name);
-        if (targetItems.length == 0) {
+        List<Item> targetItems = tracker.findByName(name);
+        if (targetItems.size() == 0) {
             System.out.println("--- По имени " + name + " заявки не найдены! ---");
         } else {
             System.out.println("--- По имени " + name + " найдены следующие заявки: ---");

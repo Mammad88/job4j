@@ -1,7 +1,12 @@
 package ru.job4j.tracker;
-import static org.hamcrest.core.IsNull.nullValue;
+
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.hamcrest.Matchers.is;
+import static org.hamcrest.core.IsNull.nullValue;
 import static org.junit.Assert.assertThat;
 
 public class TrackerTest {
@@ -25,10 +30,10 @@ public class TrackerTest {
         Item third = new Item("test3");
         tracker.add(third);
         // Создаем ожидаемый массив класса Item.
-        Item[] expected = new Item[3];
-        expected[0] = first;
-        expected[1] = second;
-        expected[2] = third;
+        List<Item> expected = new ArrayList<>();
+        expected.add(first);
+        expected.add(second);
+        expected.add(third);
         // Проверяем, что массив, передаваемый через метод findAll и ожидаемый массив равны.
         assertThat(tracker.findAll(), is(expected));
     }
@@ -51,7 +56,7 @@ public class TrackerTest {
     }
 
     @Test
-    public void whenFindByNameThenReturnByName() {
+    public void whenFindItemByName() {
         Tracker tracker = new Tracker();
         // Создаем три заявки и добавляем их все в трекер. Каждая получает уникальный id, две имеют одинаковое имя.
         Item first = new Item("123L", "test1");
@@ -61,11 +66,12 @@ public class TrackerTest {
         Item third = new Item("456L", "test2");
         tracker.add(third);
         // Создаем ожидаемый массив класса Item из двух элементов с одинаковым именем.
-        Item[] expected = new Item[2];
-        expected[0] = second;
-        expected[1] = third;
+        List<Item> expected = new ArrayList<>();
+        expected.add(first);
+        expected.add(second);
+        expected.add(third);
         // Проверяем, что массив, передаваемый через метод findAll и ожидаемый массив равны.
-        assertThat(tracker.findByName("test2"), is(expected));
+        assertThat(tracker.findByName(third.getName()), is(expected));
     }
 
     @Test
@@ -78,7 +84,6 @@ public class TrackerTest {
         tracker.replace(id, bugWithDesc);
         assertThat(tracker.findById(id).getName(), is("Bug with description"));
     }
-
 
     @Test
     public void whenDelete() {
