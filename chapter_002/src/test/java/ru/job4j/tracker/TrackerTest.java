@@ -67,7 +67,6 @@ public class TrackerTest {
         tracker.add(third);
         // Создаем ожидаемый массив класса Item из двух элементов с одинаковым именем.
         List<Item> expected = new ArrayList<>();
-        expected.add(first);
         expected.add(second);
         expected.add(third);
         // Проверяем, что массив, передаваемый через метод findAll и ожидаемый массив равны.
