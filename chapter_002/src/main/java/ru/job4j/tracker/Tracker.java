@@ -48,7 +48,7 @@ public class Tracker {
     /**
      * Метод findById с помощью которого  мы можем найти элемент по id.
      *
-     * @param id идентификатоh элемента, который мы ищем.
+     * @param id идентификатор элемента, который мы ищем.
      * @return элемент Item, либо null.
      */
 
@@ -87,7 +87,7 @@ public class Tracker {
                 nameList.add(item);
             }
         }
-        return nameList.subList(0, nameList.size());
+        return nameList;
     }
 
     /**
