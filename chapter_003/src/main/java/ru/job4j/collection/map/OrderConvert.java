@@ -1,4 +1,6 @@
-package ru.job4j.collection;
+package ru.job4j.collection.map;
+
+import ru.job4j.collection.map.Order;
 
 import java.util.HashMap;
 import java.util.List;
