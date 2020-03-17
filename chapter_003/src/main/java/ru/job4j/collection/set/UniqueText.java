@@ -7,8 +7,8 @@ import java.util.HashSet;
  * class UniqueText - идентичные тексты.
  *
  * @author Bruki Mammad (bruki_mammad@mail.ru)
- * @version 1.0
- * @since 14.03.2020
+ * @version 2.0
+ * @since 17.03.2020
  */
 public class UniqueText {
     /**
