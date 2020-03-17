@@ -1,5 +1,6 @@
 package ru.job4j.collection.set;
 
+import java.util.Arrays;
 import java.util.HashSet;
 
 /**
@@ -23,14 +24,9 @@ public class UniqueText {
         String[] text = duplicateText.split(" ");
         HashSet<String> check = new HashSet<>();
         for (String original : origin) {
-            for (String duplicate : text) {
-                check.add(original);
-                if (original.contains(duplicate)) {
-                    rsl = true;
-                } else {
-                    rsl = false;
-                }
-            }
+            check.add(original);
+            rsl = (Arrays.equals(origin, text)) || check.contains(duplicateText);
+            System.out.println(rsl);
         }
         return rsl;
     }
