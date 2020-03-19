@@ -7,8 +7,8 @@ import java.util.Map;
  * class passportOffice - сурвис паспортного стола.
  *
  * @author Bruki Mammad (bruki_mammad@mail.ru)
- * @version 1.0
- * @since 18.03.2020
+ * @version 2.0
+ * @since 19.03.2020
  */
 public class PassportOffice {
     /**
@@ -24,11 +24,20 @@ public class PassportOffice {
      */
     public boolean add(Citizen citizen) {
         boolean rsl = false;
-        if (citizens.put(citizen.getPassport(), citizen) == null) {
+        if (!citizens.containsKey(citizen.getPassport())) {
+            citizens.put(citizen.getPassport(), citizen);
             rsl = true;
         }
         return rsl;
     }
+
+//    public boolean add(Citizen citizen) {
+//        boolean rsl = false;
+//        if (citizens.put(citizen.getPassport(), citizen) == null) {
+//            rsl = true;
+//        }
+//        return rsl;
+//    }
 
     /**
      * Получить информацию о гражданине по его паспорту
