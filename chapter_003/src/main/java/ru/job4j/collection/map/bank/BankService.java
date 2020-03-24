@@ -6,8 +6,8 @@ import java.util.*;
  * class BankService - банковский сервис.
  *
  * @author Bruki Mammad (bruki_mammad@mail.ru)
- * @version 1.0
- * @since 21.03.2020
+ * @version $2.0$
+ * @since 24.03.2020
  */
 public class BankService {
     /**
@@ -53,6 +53,7 @@ public class BankService {
         for (User user : users.keySet()) {
             if (user.getPassport().equals(passport)) {
                 result = user;
+                break;
             }
         }
         return result;
@@ -66,13 +67,16 @@ public class BankService {
      * @return - информация об аккаунте.
      */
     public Account findByRequisite(String passport, String requisite) {
+        Account result = null;
         User user = findByPassport(passport);
         List<Account> accounts = users.get(user);
-        int index = accounts.indexOf(new Account(requisite, -1));
-        if (index != -1) {
-            return accounts.get(index);
+        for (Account account : accounts) {
+            if (account.getRequisite().contains(requisite)) {
+                result = account;
+                break;
+            }
         }
-        return null;
+        return result;
     }
 
     /**
