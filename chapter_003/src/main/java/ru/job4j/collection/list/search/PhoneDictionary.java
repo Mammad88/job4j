@@ -1,6 +1,7 @@
 package ru.job4j.collection.list.search;
 
 import java.util.ArrayList;
+import java.util.function.Predicate;
 
 /**
  * class  PhoneDictionary - Телефонный справочник.
@@ -27,9 +28,10 @@ public class PhoneDictionary {
      * @return Список подощедщих пользователей.
      */
     public ArrayList<Person> find(String key) {
+        Predicate<Person> combine = person -> person.getName().contains(key);
         ArrayList<Person> result = new ArrayList<>();
-        for (Person person : this.persons) {
-            if (this.contains(person, key)) {
+        for (Person person : persons) {
+            if (combine.test(person)) {
                 result.add(person);
             }
         }
@@ -43,7 +45,7 @@ public class PhoneDictionary {
      * @param key    ключевое слово
      * @return true, если ключ содержится хотя бы в одном из полей
      */
-    private boolean contains(Person person, String key) {
+    public boolean contains(Person person, String key) {
         return person.getName().contains(key)
                 || person.getSurname().contains(key)
                 || person.getAddress().contains(key)
