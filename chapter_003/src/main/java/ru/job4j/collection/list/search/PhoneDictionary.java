@@ -17,18 +17,27 @@ public class PhoneDictionary {
     public PhoneDictionary() {
     }
 
+    /**
+     * method add - добавляет пользователя в коллекцию persons.
+     *
+     * @param person - пользователь.
+     */
     public void add(Person person) {
         this.persons.add(person);
     }
 
     /**
      * Вернуть список всех пользователей, который содержат key в любых полях.
+     * Predicate<Person> combine - функция высшего порядка.
      *
      * @param key Ключ поиска.
      * @return Список подощедщих пользователей.
      */
     public ArrayList<Person> find(String key) {
-        Predicate<Person> combine = person -> person.getName().contains(key);
+        Predicate<Person> combName = person -> person.getName().contains(key);
+        Predicate<Person> combSurname = person -> person.getSurname().contains(key);
+        Predicate<Person> combAddress = person -> person.getAddress().contains(key);
+        Predicate<Person> combine = combName.or(combSurname).or(combAddress);
         ArrayList<Person> result = new ArrayList<>();
         for (Person person : persons) {
             if (combine.test(person)) {
@@ -45,10 +54,10 @@ public class PhoneDictionary {
      * @param key    ключевое слово
      * @return true, если ключ содержится хотя бы в одном из полей
      */
-    public boolean contains(Person person, String key) {
-        return person.getName().contains(key)
-                || person.getSurname().contains(key)
-                || person.getAddress().contains(key)
-                || person.getPhone().contains(key);
-    }
+//    private boolean contains(Person person, String key) {
+//        return person.getName().contains(key)
+//                || person.getSurname().contains(key)
+//                || person.getAddress().contains(key)
+//                || person.getPhone().contains(key);
+//    }
 }
