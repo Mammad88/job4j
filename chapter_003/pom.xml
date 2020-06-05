@@ -4,17 +4,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 
-    <groupId>ru.job4j</groupId>
-    <artifactId>chapter_003</artifactId>
-    <version>2.0</version>
-
     <parent>
-        <groupId>ru.job4j</groupId>
         <artifactId>junior</artifactId>
+        <groupId>ru.job4j</groupId>
         <version>2.0</version>
     </parent>
-
     <modelVersion>4.0.0</modelVersion>
+    <artifactId>chapter_003</artifactId>
+    <packaging>pom</packaging>
 
     <build>
         <plugins>
