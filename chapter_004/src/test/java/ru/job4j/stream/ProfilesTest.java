@@ -46,11 +46,11 @@ public class ProfilesTest {
     public void whenListProfileToListAddressSorted() {
         Address novoros = new Address("Novorossiysk", "Lenina", 169, 55);
         Address londonOne = new Address("London", "Baker", 10, 25);
-        Address londonTwo = new Address("London", "Marseilles", 13, 19);
+        Address londonTwo = new Address("London", "Baker", 10, 25);
         Address moscow = new Address("Moscow", "Red", 22, 58);
         Address rome = new Address("Rome", "Urbana", 10, 68);
         Address krasnodarOne = new Address("Krasnodar", "Phrunze", 20, 40);
-        Address krasnodarTwo = new Address("Krasnodar", "Kutuzovskaya", 30, 101);
+        Address krasnodarTwo = new Address("Krasnodar", "Phrunze", 20, 40);
 
         Profile victor = new Profile(novoros);
         Profile alesOne = new Profile(londonOne);
@@ -71,9 +71,7 @@ public class ProfilesTest {
         );
         List<Address> expected = List.of(
                 krasnodarOne,
-                krasnodarTwo,
                 londonOne,
-                londonTwo,
                 moscow,
                 novoros,
                 rome
