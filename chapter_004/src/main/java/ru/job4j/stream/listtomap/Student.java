@@ -1,4 +1,4 @@
-package ru.job4j.stream;
+package ru.job4j.stream.listtomap;
 
 import java.util.Objects;
 
@@ -17,8 +17,8 @@ public class Student {
         this.score = score;
     }
 
-    public int getScore() {
-        return score;
+    public String getSurname() {
+        return surname;
     }
 
     @Override

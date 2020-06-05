@@ -1,4 +1,4 @@
-package ru.job4j.stream;
+package ru.job4j.stream.studentgroup;
 
 import org.junit.Test;
 
