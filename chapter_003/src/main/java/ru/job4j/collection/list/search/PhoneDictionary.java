@@ -7,13 +7,16 @@ import java.util.function.Predicate;
  * class  PhoneDictionary - Телефонный справочник.
  *
  * @author Bruki Mammad (bruki_mammad@mail.ru)
- * @version 0.1
- * @since 23.02.20
+ * @version 3.0
+ * @since 05.06.20
  */
 public class PhoneDictionary {
 
     private ArrayList<Person> persons = new ArrayList<Person>();
 
+    /**
+     * конструктор по умолчанию.
+     */
     public PhoneDictionary() {
     }
 
@@ -37,7 +40,8 @@ public class PhoneDictionary {
         Predicate<Person> combName = person -> person.getName().contains(key);
         Predicate<Person> combSurname = person -> person.getSurname().contains(key);
         Predicate<Person> combAddress = person -> person.getAddress().contains(key);
-        Predicate<Person> combine = combName.or(combSurname).or(combAddress);
+        Predicate<Person> combPhone = person -> person.getPhone().contains(key);
+        Predicate<Person> combine = combName.or(combSurname).or(combAddress).or(combPhone);
         ArrayList<Person> result = new ArrayList<>();
         for (Person person : persons) {
             if (combine.test(person)) {
