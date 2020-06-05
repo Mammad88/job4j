@@ -15,10 +15,10 @@ import static org.junit.Assert.assertThat;
  */
 public class SchoolTest {
     /**
-     * Список ученико 10 класса.
+     * Список учеников 10 класса.
      */
     @Test
-    public void ClassTenA() {
+    public void whenGroupTenA() {
         School select = new School();
         List<Student> students = Arrays.asList(
                 new Student("Ivanov", 10),
@@ -47,7 +47,7 @@ public class SchoolTest {
     }
 
     @Test
-    public void ClassTenB() {
+    public void whenGroupTenB() {
         School select = new School();
         List<Student> students = Arrays.asList(
                 new Student("Ivanov", 10),
@@ -74,7 +74,7 @@ public class SchoolTest {
     }
 
     @Test
-    public void ClassTenC() {
+    public void whenGroupTenC() {
         School select = new School();
         List<Student> students = Arrays.asList(
                 new Student("Ivanov", 10),
