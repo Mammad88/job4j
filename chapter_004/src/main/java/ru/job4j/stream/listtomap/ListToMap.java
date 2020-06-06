@@ -8,8 +8,8 @@ import java.util.stream.Collectors;
  * Преобразования списка в карту.
  *
  * @author Bruki Mammad (bruki_mammad@mail.ru)
- * @version 1.0
- * @since 05.06.2020
+ * @version 2.0
+ * @since 06.06.2020
  */
 public class ListToMap {
     /**
@@ -19,8 +19,12 @@ public class ListToMap {
      * @return map, поле score - знание студента в баллах.
      */
     Map<String, Student> convert(List<Student> list) {
-        return list.stream()
-                .distinct()
-                .collect(Collectors.toMap(Student::getSurname, student -> student));
+        try {
+            return list.stream()
+                    .distinct()
+                    .collect(Collectors.toMap(Student::getSurname, student -> student));
+        } catch (IllegalStateException ise) {
+            throw new IllegalStateException();
+        }
     }
 }
