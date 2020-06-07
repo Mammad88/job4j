@@ -54,7 +54,7 @@ public class ListToMapTest {
 
     @Test
     public void whenUniqueListToMapGradeTenA() {
-        Student ivanovOne = new Student("Ivanov", 10);
+        Student ivanovOne = new Student("Ivanov", 20);
         Student sidorov = new Student("Sidorov", 20);
         Student petrovOne = new Student("Petrov", 30);
         Student alekseevOne = new Student("Alekseev", 40);

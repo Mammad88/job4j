@@ -21,6 +21,10 @@ public class Student {
         return surname;
     }
 
+    public int getScore() {
+        return score;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
