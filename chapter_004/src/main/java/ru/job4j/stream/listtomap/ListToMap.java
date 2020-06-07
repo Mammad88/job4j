@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
  * Преобразования списка в карту.
  *
  * @author Bruki Mammad (bruki_mammad@mail.ru)
- * @version 3.0
+ * @version 4.0
  * @since 07.06.2020
  */
 public class ListToMap {
@@ -22,6 +22,6 @@ public class ListToMap {
     Map<String, Student> convert(List<Student> list) {
         return list.stream()
                 .collect(Collectors.toMap(Student::getSurname, student -> student,
-                        ((student, student2) -> student.getScore() > student2.getScore() ? student : student2)));
+                        ((student, student2) -> student)));
     }
 }
