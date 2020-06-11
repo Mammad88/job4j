@@ -1,5 +1,6 @@
 package ru.job4j.collection.map.bank;
 
+import java.math.BigDecimal;
 import java.util.Objects;
 
 /**
@@ -15,13 +16,13 @@ public class Account {
      */
     private String requisite;
     /**
-     * Баланс.
+     * Баланс счета.
      */
-    private double balance;
+    private BigDecimal value;
 
-    public Account(String requisite, double balance) {
+    public Account(String requisite, BigDecimal value) {
         this.requisite = requisite;
-        this.balance = balance;
+        this.value = value;
     }
 
     public String getRequisite() {
@@ -32,12 +33,12 @@ public class Account {
         this.requisite = requisite;
     }
 
-    public double getBalance() {
-        return balance;
+    public BigDecimal getValue() {
+        return value;
     }
 
-    public void setBalance(double balance) {
-        this.balance = balance;
+    public void setValue(BigDecimal value) {
+        this.value = value;
     }
 
     @Override
@@ -55,5 +56,23 @@ public class Account {
     @Override
     public int hashCode() {
         return Objects.hash(requisite);
+    }
+
+    /**
+     * Перевод средств со счета отправителя получателю.
+     *
+     * @param dest   Счет получателя.
+     * @param amount Сумма.
+     * @return Прошел ли перевод.
+     */
+
+    public boolean transfer(Account dest, BigDecimal amount) {
+        boolean result = false;
+        if (this.value.compareTo(amount) >= 0) {
+            this.value = this.value.subtract(amount);
+            dest.value = dest.value.add(amount);
+            result = true;
+        }
+        return result;
     }
 }
