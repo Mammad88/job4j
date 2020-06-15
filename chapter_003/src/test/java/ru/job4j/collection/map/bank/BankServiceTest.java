@@ -5,7 +5,6 @@ import org.junit.Test;
 import javax.security.auth.login.AccountNotFoundException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import static org.hamcrest.core.Is.is;
@@ -104,7 +103,8 @@ public class BankServiceTest {
         data.addAccountToUser("1", new Account("1234", new BigDecimal("40000.50")));
         data.addAccountToUser("1", new Account("5678", new BigDecimal("5000.00")));
         List<Account> result = data.getUserAccounts("1");
-        List<Account> expect = new ArrayList<>(Arrays.asList(new Account("1234", new BigDecimal("40000.50")),
+        List<Account> expect = new ArrayList<>(List.of(
+                new Account("1234", new BigDecimal("40000.50")),
                 new Account("5678", new BigDecimal("5000.00"))));
         assertThat(result, is(expect));
     }

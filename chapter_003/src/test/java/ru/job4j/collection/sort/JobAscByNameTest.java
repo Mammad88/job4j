@@ -3,7 +3,6 @@ package ru.job4j.collection.sort;
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
@@ -14,18 +13,20 @@ import static org.junit.Assert.assertThat;
 public class JobAscByNameTest {
     @Test
     public void sortAscByNameTest() {
-        List<Job> jobs = Arrays.asList(
+        List<Job> jobs = new ArrayList<>(
+                List.of(
                 new Job("One bug", 1),
                 new Job("Two bug", 4),
                 new Job("Fix bug", 2),
                 new Job("X task", 0)
+                )
         );
         jobs.sort(new JobAscByName());
         List<String> jobNames = new ArrayList<>();
         for (Job job : jobs) {
             jobNames.add(job.getName());
         }
-        List<String> expected = Arrays.asList("Fix bug", "One bug", "Two bug", "X task");
+        List<String> expected = List.of("Fix bug", "One bug", "Two bug", "X task");
         assertThat(jobNames, is(expected));
     }
 

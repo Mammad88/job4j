@@ -12,11 +12,13 @@ import static org.junit.Assert.assertThat;
 public class JobDescByPriorityTest {
     @Test
     public void sortDescByPriorityTest() {
-        List<Job> jobs = Arrays.asList(
+        List<Job> jobs = new ArrayList<>(
+                List.of(
                 new Job("One bug", 1),
                 new Job("Two bug", 4),
                 new Job("Fix bug", 2),
                 new Job("X task", 0)
+                )
         );
         jobs.sort(new JobDescByPriority());
         List<Integer> priority = new ArrayList<>();
