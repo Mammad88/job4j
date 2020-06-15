@@ -12,7 +12,7 @@ import java.util.function.Predicate;
  */
 public class PhoneDictionary {
 
-    private ArrayList<Person> persons = new ArrayList<Person>();
+    private ArrayList<Person> persons = new ArrayList<>();
 
     /**
      * конструктор по умолчанию.
@@ -26,7 +26,7 @@ public class PhoneDictionary {
      * @param person - пользователь.
      */
     public void add(Person person) {
-        this.persons.add(person);
+        persons.add(person);
     }
 
     /**
@@ -43,7 +43,7 @@ public class PhoneDictionary {
         Predicate<Person> combPhone = person -> person.getPhone().contains(key);
         Predicate<Person> combine = combName.or(combSurname).or(combAddress).or(combPhone);
         ArrayList<Person> result = new ArrayList<>();
-        for (Person person : persons) {
+        for (var person : persons) {
             if (combine.test(person)) {
                 result.add(person);
             }
@@ -51,10 +51,10 @@ public class PhoneDictionary {
         return result;
     }
 
-    /**
-     * Проверяяем наличие ключевого слова в полях пользователя.
-     *
-     * @param person пользователь
+    /*
+      Проверяяем наличие ключевого слова в полях пользователя.
+
+      @param person пользователь
      * @param key    ключевое слово
      * @return true, если ключ содержится хотя бы в одном из полей
      */
