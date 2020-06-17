@@ -3,11 +3,11 @@ package ru.job4j.collection.sort;
 import java.util.Comparator;
 
 /**
- * class LexSort - сортировка номера .
+ * class LexSort - сортировка номера.
  *
  * @author Bruki Mammad (bruki_mammad@mail.ru)
- * @version $1.0$
- * @since 28.03.2020
+ * @version $2.0$
+ * @since 17.06.2020
  */
 public class LexSort implements Comparator<String> {
 
@@ -20,11 +20,8 @@ public class LexSort implements Comparator<String> {
      */
     @Override
     public int compare(String left, String right) {
-        if (left.length() > right.length()) {
-            return 1;
-        } else if (left.length() < right.length()) {
-            return -1;
-        }
-        return left.compareTo(right);
+        String leftN = left.split("\\.")[0];
+        String rightN = right.split("\\.")[0];
+        return Integer.compare(Integer.parseInt(leftN), Integer.parseInt(rightN));
     }
 }
