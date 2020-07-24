@@ -1,7 +1,7 @@
 # используем язык java. Travis CI поддерживает другие языки тоже.
 language: java
 jdk:
-  - openjdk13
+  - openjdk14
 
 # используем режим обычного пользователя для сборки проекта.
 sudo: false
@@ -15,9 +15,9 @@ after_success:
 notifications:
   email:
     recipients:
-      - bruki_mammad@mail.ru
+      - bruki.mammad@mail.ru
     on_success: never # default: change
-    on_failure: always # default: al,ways
+    on_failure: always # default: always
 
 env:
   global:

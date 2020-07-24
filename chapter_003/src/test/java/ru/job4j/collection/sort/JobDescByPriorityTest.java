@@ -3,7 +3,6 @@ package ru.job4j.collection.sort;
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import static org.hamcrest.core.Is.is;
@@ -25,7 +24,7 @@ public class JobDescByPriorityTest {
         for (Job job : jobs) {
             priority.add(job.getPriority());
         }
-        List<Integer> expected = Arrays.asList(4, 2, 1, 0);
+        List<Integer> expected = List.of(4, 2, 1, 0);
         assertThat(priority, is(expected));
     }
 }
